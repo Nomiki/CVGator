@@ -3,7 +3,7 @@ import { IContactInformation } from './ContactInformation';
 import { IParagraph } from './Paragraph';
 
 export interface IResume {
-    id: number;
+    id: string;
     name: string;
     contactInformation: IContactInformation;
     summary: string;
@@ -14,7 +14,7 @@ export interface IResume {
 }
 
 class Resume implements IResume{
-    public id: number;
+    public id: string;
     public name: string;
     public contactInformation: IContactInformation;
     public summary: string;
