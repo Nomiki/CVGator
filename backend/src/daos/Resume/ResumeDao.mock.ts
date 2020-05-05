@@ -10,7 +10,6 @@ export class ResumeDao extends MockDaoMock implements IResumeDao {
         const db = await super.openDb();
         for (const resume of db.resumes) {
             if (resume.id === id){
-
                 return resume;
             }
         }
