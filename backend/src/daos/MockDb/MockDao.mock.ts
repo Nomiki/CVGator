@@ -9,6 +9,6 @@ export class MockDaoMock {
     }
 
     protected saveDb(db: any): Promise<any> {
-        return jsonfile.writeFile(this.dbFilePath, db);
+        return jsonfile.writeFile(this.dbFilePath, db, { spaces: 2, EOL: "\r\n" });
     }
 }

@@ -38,9 +38,9 @@ export class ResumeController {
         const resumeId = req.params.id;
         const respResume = await ResumeController.resumeDao.delete(resumeId);
         if (respResume){
-            return res.status(OK);
+            return res.status(OK).end();
         } else {
-            return res.status(NOT_FOUND);
+            return res.status(NOT_FOUND).end();
         }
     }
 }
