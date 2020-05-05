@@ -33,7 +33,7 @@ export class ResumeDao extends MockDaoMock implements IResumeDao {
         for (let i = 0; i < db.resumes.length; i++) {
             if ( db.resumes[i].id === resume.id){
                 db.resumes[i] = resume;
-                db.saveDb(db);
+                super.saveDb(db);
                 return resume;
             }
         }
@@ -46,7 +46,7 @@ export class ResumeDao extends MockDaoMock implements IResumeDao {
         for (let i = 0; i < db.resumes.length; i++) {
             if (db.resumes[i].id === id){
                 db.resumes.splice(i, 1);
-                db.saveDb(db);
+                super.saveDb(db);
                 return true;
             }
         }
