@@ -9,10 +9,11 @@ class ContactInformation implements IContactInformation{
     public phone: string;
     public address: string;
 
-    constructor(iContactInformation : IContactInformation) {
-        this.email = iContactInformation.email;
-        this.phone = iContactInformation.phone;
-        this.address = iContactInformation.address;
+    constructor();
+    constructor(iContactInformation? : IContactInformation) {
+        this.email = iContactInformation?.email || '';
+        this.phone = iContactInformation?.phone || '';
+        this.address = iContactInformation?.address || '';
     }
 }
 

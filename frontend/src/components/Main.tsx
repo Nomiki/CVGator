@@ -11,7 +11,8 @@ interface SearchState {
 export class Main extends Component<{}, SearchState>{
   idRef: React.RefObject<HTMLInputElement>;
   
-  onClickFetch = async (cur : IResume): Promise<void> => {
+
+  onClickFetch = async (): Promise<void> => {
     const id = this.idRef.current?.value;
     console.log(id);
     if (id){
@@ -91,7 +92,7 @@ export class Main extends Component<{}, SearchState>{
             <p>
               id:
               <input type = "text" ref={this.idRef}/>
-              <button onClick={this.onClickFetch(currentResume)} className="my-button">
+              <button onClick={this.onClickFetch} className="my-button">
                 Fetch Resume
               </button>
               <button onClick={this.onClickDelete} className="my-button">
@@ -106,7 +107,7 @@ export class Main extends Component<{}, SearchState>{
         <input
           name="name"
           placeholder="Full Name"
-          value={this.state.resume?.name}
+          value={this.state.resume?.fullName}
           //onChange={e => this.change(e)}
         />
         <br />Job Title:
