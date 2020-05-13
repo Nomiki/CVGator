@@ -2,19 +2,23 @@ import React, { useState, useEffect } from "react";
 import Resume, { IResume } from "../interfaces/Resume";
 import { ResumeApi } from "../api/ResumeApi";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Input } from "@material-ui/core";
+import metaResume from "../meta/resume";
+import IResumeStruct from "../meta/resume";
+import CV_TextBox from "./formBlocks/CV_TextBox";
 
 const ResumeForm: React.FC<IResume> = (props) => {
   const [resume, setResume] = useState<IResume>(new Resume());
 
   const useStyles = makeStyles(() => ({
     textFieldStyle: {
-      margin: "10px"
-    }
+      margin: "10px",
+    },
   }));
 
   const fetchResume = async () => {
     let res = await ResumeApi.get("2");
+    formGenerator();
     console.log("hook fetched!");
     if (res) {
       console.log(res);
@@ -22,6 +26,39 @@ const ResumeForm: React.FC<IResume> = (props) => {
     } else {
       return new Resume();
     }
+  };
+
+  const classes = useStyles();
+
+  const formGenerator = () => {
+    
+    const fields = Object.keys(metaResume);
+    console.log(fields);
+
+    const elements = [];
+
+    for (const field of fields) {
+      const metaData = metaResume[field];
+      switch (metaData.type) {
+        case "text":
+        case "multiline":
+          elements.push(
+            <div>
+              <CV_TextBox
+                name={field}
+                {...metaData}
+                className={classes.textFieldStyle}
+                value={(resume as any)[field]}
+                onChange={onChangeName}
+              ></CV_TextBox>
+            </div>
+          );
+          
+      }
+      
+    }
+    
+    return elements;
   };
 
   useEffect(() => {
@@ -43,35 +80,15 @@ const ResumeForm: React.FC<IResume> = (props) => {
     setResume(newResume);
   };
 
-  const classes = useStyles();
+  
+  console.log(formGenerator());
+
   return (
-    <form>
+    <span>
       <div>
-        <TextField
-          fullWidth
-          className={classes.textFieldStyle}
-          id="standard-helperText"
-          label="Full-Name"
-          value={resume?.fullName}
-          helperText=""
-          onChange={onChangeName}
-          name="fullName"
-        />
+        {formGenerator()}
       </div>
-      <div>
-        <TextField
-          multiline
-          fullWidth
-          className={classes.textFieldStyle}
-          rows={1}
-          rowsMax={4}
-          label="Summary"
-          helperText=""
-          onChange={onChangeName}
-          name="summary"
-        />
-      </div>
-    </form>
+    </span>
   );
 };
 
