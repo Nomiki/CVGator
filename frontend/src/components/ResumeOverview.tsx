@@ -13,7 +13,6 @@ const ResumeOverview: React.FC = (props) => {
         setResume(newResume);
     }
 
-
     const fetchResume = async () => {
         let res = await ResumeApi.get("2");
         console.log("hook fetched!");

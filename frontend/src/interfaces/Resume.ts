@@ -1,11 +1,12 @@
 import { ISkill } from './Skill';
-import { IContactInformation } from './ContactInformation';
 import { IParagraph } from './Paragraph';
 
 export interface IResume {
     id?: string;
     fullName?: string;
-    contactInformation?: IContactInformation;
+    email?: string;
+    phone?: string;
+    address?: string;
     summary?: string;
     experience? : IParagraph[];
     education? : IParagraph[];
@@ -16,7 +17,9 @@ export interface IResume {
 class Resume implements IResume{
     public id: string;
     public fullName: string;
-    public contactInformation?: IContactInformation;
+    public email: string;
+    public phone: string;
+    public address: string;
     public summary: string;
     public experience : IParagraph[];
     public education : IParagraph[];
@@ -27,7 +30,9 @@ class Resume implements IResume{
     constructor(iResume? : IResume) {
         this.id = iResume?.id || '';
         this.fullName = iResume?.fullName || '';
-        this.contactInformation = iResume?.contactInformation || undefined;
+        this.email = iResume?.email || '';
+        this.phone = iResume?.phone || '';
+        this.address = iResume?.address || '';
         this.summary = iResume?.summary || '';
         this.experience = iResume?.experience || [];
         this.education = iResume?.education || [];

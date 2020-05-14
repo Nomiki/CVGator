@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IResume } from "../interfaces/Resume";
 import InfoPage from "./pages/InfoPage";
-import { JobPage } from "./pages/JobPage";
 
 const ResumeForm = ({superResumeUpdater, superResume}: any) => {
   const [resume, setResume] = useState<IResume>(superResume);
