@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Typography } from "@material-ui/core";
-import ContactInformation, { IContactInformation } from "../../interfaces/ContactInformation";
 import CV_TextBox from "./CV_TextBox";
 
 const CV_ContactInformation = (props: any) => {
 
   const { contactInformationState, onContactInformationChanged } = props;
-
-  useEffect(() => {
-    console.log("using inner effect!", contactInformationState);
-  }, [contactInformationState]);
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Resume, { IResume } from "../interfaces/Resume";
 import { ResumeApi } from "../api/ResumeApi";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Container } from "@material-ui/core";
 import CV_TextBox from "./formBlocks/CV_TextBox";
 import CV_ContactInformation from "./formBlocks/CV_ContactInformation";
 import ContactInformation, {
@@ -11,12 +11,6 @@ import ContactInformation, {
 const ResumeForm: React.FC<IResume> = (props) => {
   const [resume, setResume] = useState<IResume>(new Resume());
   const [contactInformation, setContactInformation] = useState<IContactInformation>(new ContactInformation());
-  
-  const useStyles = makeStyles(() => ({
-    textFieldStyle: {
-      margin: "10px",
-    },
-  }));
 
   const fetchResume = async () => {
     let res = await ResumeApi.get("2");
@@ -28,8 +22,6 @@ const ResumeForm: React.FC<IResume> = (props) => {
       return new Resume();
     }
   };
-
-  const classes = useStyles();
 
   useEffect(() => {
     console.log("using effect!");
@@ -72,7 +64,7 @@ const ResumeForm: React.FC<IResume> = (props) => {
   };
 
   return (
-    <div style={{margin: "10px"}}>
+    <Container maxWidth="lg">
       <CV_TextBox
         name="fullName"
         display="Full Name"
@@ -89,7 +81,7 @@ const ResumeForm: React.FC<IResume> = (props) => {
         contactInformationState={contactInformation}
         onContactInformationChanged={onContactInformationChanged}
       ></CV_ContactInformation>
-    </div>
+    </Container>
   );
 };
 
