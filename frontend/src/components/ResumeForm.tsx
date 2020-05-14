@@ -72,7 +72,7 @@ const ResumeForm: React.FC<IResume> = (props) => {
   };
 
   return (
-    <span>
+    <div style={{margin: "10px"}}>
       <CV_TextBox
         name="fullName"
         display="Full Name"
@@ -89,7 +89,7 @@ const ResumeForm: React.FC<IResume> = (props) => {
         contactInformationState={contactInformation}
         onContactInformationChanged={onContactInformationChanged}
       ></CV_ContactInformation>
-    </span>
+    </div>
   );
 };
 
