@@ -8,9 +8,11 @@ import ContactInformation, {
   IContactInformation,
 } from "../interfaces/ContactInformation";
 
-const ResumeForm: React.FC<IResume> = (props) => {
+const ResumeForm = (props: any) => {
   const [resume, setResume] = useState<IResume>(new Resume());
   const [contactInformation, setContactInformation] = useState<IContactInformation>(new ContactInformation());
+
+  const {superResumeUpdater} = props;
 
   const fetchResume = async () => {
     let res = await ResumeApi.get("2");
@@ -31,6 +33,8 @@ const ResumeForm: React.FC<IResume> = (props) => {
       if (resm.contactInformation) {
         setContactInformation(resm.contactInformation);
       }
+
+      superResumeUpdater(resm);
     });
   }, []);
 
@@ -38,6 +42,7 @@ const ResumeForm: React.FC<IResume> = (props) => {
     console.log("Changing", field, "to", value);
     const newResume = { ...resume, [field]: value };
     setResume(newResume);
+    superResumeUpdater(newResume);
   };
 
   const onChange = (event: any) => {
