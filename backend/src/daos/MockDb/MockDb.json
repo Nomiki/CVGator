@@ -18,13 +18,11 @@
   ],
   "resumes": [
     {
-      "id": "b2954b0f-e97b-4e65-b6bc-9209c30ad4b0",
+      "id": "1",
       "fullName": "Ayelet",
-      "contactInformation": {
-        "email": "nissan@ayaelet.com",
-        "phone": "0564",
-        "address": "ayelet 7,TA"
-      },
+      "email": "nissan@ayaelet.com",
+      "phone": "0564",
+      "address": "ayelet 7,TA",
       "summary": "I'm someone",
       "experience": [
         {
@@ -66,11 +64,9 @@
     {
       "id": "2",
       "fullName": "Ayelet",
-      "contactInformation": {
-        "email": "nissan@ayaelet.com",
-        "phone": "0564",
-        "address": "ayelet 7,TA"
-      },
+      "email": "nissan@ayaelet.com",
+      "phone": "0564",
+      "address": "ayelet 7,TA",
       "summary": "I'm someone",
       "experience": [
         {

@@ -17,6 +17,24 @@ const InfoPage = ({onChange  , resume } : any) => {
         value={resume?.summary}
         onChange={onChange}
       ></CV_TextBox>
+      <CV_TextBox
+        name="email"
+        display="Email"
+        value={resume?.email}
+        onChange={onChange}
+      ></CV_TextBox>
+      <CV_TextBox
+        name="phone"
+        display="Phone"
+        value={resume?.phone}
+        onChange={onChange}
+      ></CV_TextBox>
+      <CV_TextBox
+        name="address"
+        display="Address"
+        value={resume?.address}
+        onChange={onChange}
+      ></CV_TextBox>
     </Container>
     )
 }
