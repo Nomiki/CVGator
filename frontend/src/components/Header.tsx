@@ -14,7 +14,7 @@ const Header = (props : {userName : string}) => {
     return (
         <AppBar position="static">
             <Toolbar>
-                <Typography variant='h3' className={classes.typographyStyles}> ResumeFx</Typography>
+                <Typography variant='h5' className={classes.typographyStyles}>ResumeFx</Typography>
                 <Typography> Welcome {props.userName}</Typography>
                 <AssignmentIndIcon/>
             </Toolbar>

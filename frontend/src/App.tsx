@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import ResumeForm from "./components/ResumeForm";
-import Header from "./materials/Header";
+import Header from "./components/Header";
 import { Grid } from "@material-ui/core";
 import ResumeOverview from "./components/ResumeOverview";
 
