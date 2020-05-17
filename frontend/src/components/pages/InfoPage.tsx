@@ -1,14 +1,20 @@
-import React from 'react'
-import Container from '@material-ui/core/Container'
-import CV_TextBox from '../formBlocks/CV_TextBox'
+import React from "react";
+import Container from "@material-ui/core/Container";
+import CV_TextBox from "../formBlocks/CV_TextBox";
 
-const InfoPage = ({onChange  , resume } : any) => {
-    return (
-        <Container maxWidth="lg">
+const InfoPage = ({ onChange, resume }: any) => {
+  return (
+    <Container maxWidth="lg">
       <CV_TextBox
         name="fullName"
         display="Full Name"
         value={resume?.fullName}
+        onChange={onChange}
+      ></CV_TextBox>
+      <CV_TextBox
+        name="jobTitle"
+        display="Job Title"
+        value={resume?.jobTitle}
         onChange={onChange}
       ></CV_TextBox>
       <CV_TextBox
@@ -36,7 +42,7 @@ const InfoPage = ({onChange  , resume } : any) => {
         onChange={onChange}
       ></CV_TextBox>
     </Container>
-    )
-}
+  );
+};
 
 export default InfoPage;

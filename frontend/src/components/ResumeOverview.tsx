@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Grid } from '@material-ui/core';
 import ResumeForm from './ResumeForm';
 import Preview from './resumePreview/Preview';
-import Resume, { IResume } from '../interfaces/Resume';
+import Resume, { IResume } from 'shared/dist/interfaces/Resume';
 import { ResumeApi } from '../api/ResumeApi';
 
 const ResumeOverview: React.FC = (props) => {

@@ -11,7 +11,6 @@ class Paragraph implements IParagraph{
     public dateStart?: Date;
     public dateEnd?: Date;
 
-    constructor()
     constructor(iParagraph? : IParagraph) {
         this.jobTitle = iParagraph?.jobTitle || '';
         this.description = iParagraph?.description || [];

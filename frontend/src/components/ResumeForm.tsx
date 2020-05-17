@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { IResume } from "../interfaces/Resume";
+import { IResume } from "shared/dist/interfaces/Resume";
 import InfoPage from "./pages/InfoPage";
 
 const ResumeForm = ({superResumeUpdater, superResume}: any) => {
