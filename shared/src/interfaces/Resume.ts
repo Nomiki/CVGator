@@ -4,6 +4,7 @@ import { IParagraph } from './Paragraph';
 export interface IResume {
     id?: string;
     fullName?: string;
+    jobTitle?: string;
     email?: string;
     phone?: string;
     address?: string;
@@ -17,6 +18,7 @@ export interface IResume {
 class Resume implements IResume{
     public id: string;
     public fullName: string;
+    public jobTitle: string;
     public email: string;
     public phone: string;
     public address: string;
@@ -24,12 +26,12 @@ class Resume implements IResume{
     public experience : IParagraph[];
     public education : IParagraph[];
     public skills : ISkill[];
-    public languages: ISkill[];
+    public languages: ISkill[]; 
 
-    constructor();
     constructor(iResume? : IResume) {
         this.id = iResume?.id || '';
         this.fullName = iResume?.fullName || '';
+        this.jobTitle = iResume?.jobTitle || '';
         this.email = iResume?.email || '';
         this.phone = iResume?.phone || '';
         this.address = iResume?.address || '';

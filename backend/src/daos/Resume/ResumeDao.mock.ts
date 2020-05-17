@@ -1,7 +1,9 @@
 import { MockDaoMock } from '@daos/MockDb/MockDao.mock';
 import { IResumeDao } from './ResumeDao';
-import Resume, { IResume } from '@entities/Resume';
 import { v4 as uuidv4 } from 'uuid';
+import {IResume} from 'shared/dist/interfaces/Resume';
+import Resume from 'shared/dist/interfaces/Resume';
+
 
 
 export class ResumeDao extends MockDaoMock implements IResumeDao {

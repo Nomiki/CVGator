@@ -20,6 +20,7 @@
     {
       "id": "1",
       "fullName": "Ayelet",
+      "jobTitle": "Baker in grace",
       "email": "nissan@ayaelet.com",
       "phone": "0564",
       "address": "ayelet 7,TA",
@@ -64,6 +65,7 @@
     {
       "id": "2",
       "fullName": "Ayelet",
+      "jobTitle": "Karin of goren",
       "email": "nissan@ayaelet.com",
       "phone": "0564",
       "address": "ayelet 7,TA",
