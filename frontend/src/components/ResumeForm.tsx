@@ -45,8 +45,10 @@ const ResumeForm = ({ superResumeUpdater, superResume }: any) => {
 
   const showButtons = (pageNumber: number) => {
     const buttonArr = [];
+    let i = 0;
     const nextButton = (
       <Button
+        key={i++}
         id="nextButton"
         color="primary"
         variant="contained"
@@ -57,6 +59,7 @@ const ResumeForm = ({ superResumeUpdater, superResume }: any) => {
     );
     const backButton = (
       <Button
+        key={i++}
         id="backButton"
         variant="contained"
         onClick={(e) => onClickPageIndex("back")}
@@ -79,7 +82,7 @@ const ResumeForm = ({ superResumeUpdater, superResume }: any) => {
       case 0:
         return <InfoPage onChange={onChange} resume={resume} />;
       case 1:
-        return <JobPage onChange={onChange} resume={resume} />;
+        return <JobPage onChange={onChangeResume} resume={resume} />;
       default:
         return <span>MoFo</span>;
     }
