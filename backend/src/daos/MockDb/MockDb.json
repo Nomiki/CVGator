@@ -28,6 +28,7 @@
       "experience": [
         {
           "jobTitle": "Software Engine Nissan corvet",
+          "employer": "Job Master",
           "description": "I did a lot of stuff",
           "dateStart": "10-8-2017",
           "dateEnd": "10-8-2019"
@@ -73,9 +74,17 @@
       "experience": [
         {
           "jobTitle": "Software Engine Nissan corvet",
+          "employer": "Ken Master",
           "description": "I did a lot of stuff",
-          "dateStart": "10-8-2017",
-          "dateEnd": "10-8-2019"
+          "dateStart": "10/08/2017",
+          "dateEnd": "10/08/2019"
+        },
+        {
+          "jobTitle": "Y R U Geh",
+          "employer": "African",
+          "description": "transGenda",
+          "dateStart": "10/08/2016",
+          "dateEnd": "10/02/2017"
         }
       ],
       "education": [
